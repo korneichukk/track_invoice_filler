@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+<div class="container mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <h2 class="text-3xl font-semibold text-center mb-6 text-green-600">Form Submitted Successfully!</h2>
+    <p class="text-center text-lg text-gray-700 mb-4">Your data has been saved. You can download the following files:</p>
+
+    <ul class="space-y-3">
+        {% for template_name, download_link in templates_and_links %}
+        <li>
+            <a href="{% url 'download_pdf' company_name=company_name template_name=template_name %}"
+               class="block text-blue-600 hover:text-blue-800 text-lg hover:underline transition duration-300">
+                Download {{ template_name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "track-invoice-filler"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^5.2"
+pydantic-settings = "^2.8.1"
+faker = "^37.1.0"
+pymupdf = "^1.25.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
